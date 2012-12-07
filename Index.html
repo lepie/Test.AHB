@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Default html5</title>
-<script type="text/javascript" src="JS/jquery-1.6.4.min.js"></script>
+
 <style type="text/css">
 <!--
 body {
@@ -94,11 +94,16 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
     <!-- end .content --></div>
   <!-- end .container --></div>
 </body>
-<script type="text/javascript" src="http://lepie.7hostfree.com/JServer.js"></script>
 <script type="text/javascript">
-	alert("我是本地数据,可以来自被跨域的变量manifestext! 实际内容为: " + manifestext);
-    var localHandler = function(data){
-        alert('我是本地函数，可以被跨域的.js文件调用，远程js带来的数据是：' + data.result);
-    };
+alert("我是顺序No.01");
+	var localHandler=function(data){
+        alert("我是本地函数，可以被跨域文件调用，远程js带来的数据是: " + data.result);};
+alert("我是顺序No.02");
+</script>
+<script type="text/javascript" src="http://lepie.7hostfree.com/Jsonp-scriptSvr.js"></script>
+<script type="text/javascript">
+alert("我是顺序No.03");
+	alert("我是本地数据,可以来自被跨域的变量manifestext! 实际内容为: " + Manifestext);
+alert("我是顺序No.04");
 </script>
 </html>
